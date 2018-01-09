@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+        </title>
+    </head>
+    <body>
+        <label>
+            Search
+        </label>
+        <input type="text" value="Chirag"/>
+        <h3>
+            Search Results
+        </h3>
+        <div class="list-group" ng-repeat = "person in people">
+            <search-result 
+            person-object="person" 
+            formatted-address-function="formattedAddress(aperson)" >
+            </search-result>
+        </div>
+        <!-- directive: search-result -->
+    </body>
+</html>

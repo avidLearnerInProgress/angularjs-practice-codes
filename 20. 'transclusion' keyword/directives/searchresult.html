@@ -1,0 +1,11 @@
+
+<a class="list-group-item" href="#">
+    <h4 class="list-group-item-heading">
+        {{personObject.name}}
+    </h4>
+    <p class="list-group-item-text">
+        {{ formattedAddressFunction({ aperson : personObject} ) }}
+    </p>
+    <!--Take a piece of document and include it in another piece of document-->
+    <small><ng-transclude></ng-transclude></small>
+</a>

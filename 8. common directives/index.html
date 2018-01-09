@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="myApp">
+    <head>
+        <title>
+            AngularJS
+        </title>
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+            <meta content="utf-8" http-equiv="encoding">
+                <!-- load bootstrap and fontawesome via CDN -->
+                <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+                    <style>
+                        html, body, input, select, textarea
+            {
+                font-size: 1.05em;
+            }
+                    </style>
+                    <!-- load angular via CDN -->
+                    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js">
+                    </script>
+                    <script src="app.js">
+                    </script>
+                </link>
+            </meta>
+        </meta>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-default">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="/">
+                            AngularJS
+                        </a>
+                    </div>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-home">
+                                </i>
+                                Home
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div class="container">
+            <div ng-controller="myController">
+                <h1>
+                    Hello world!
+                </h1>
+                <div>
+                    <label>
+                        Enter handle
+                    </label>
+                    <input ng-model="handle" type="text"/>
+                </div>
+                <!--when handle.length !== character the appropriate class is activated-->
+                <div class="alert" ng-class=" { 'alert-warning' : handle.length < characters , 'alert-danger' : handle.length > characters }" ng-if=" handle.length !== characters ">
+                    <div ng-show="handle.length < characters">
+                        Your length is < 6 characters
+                    </div>
+                    <div ng-show="handle.length > characters">
+                        Your length is > 6 characters
+                    </div>
+                </div>
+                <h3>
+                    {{ lowerCaseHandle() }}
+                </h3>
+                <br>
+                <h3>Values</h3>
+                <ul>
+                  <li ng-repeat="value in values">
+                    {{ value.valuename}}
+                  </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
